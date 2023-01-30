@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do Page</title>
+    <link href="/styles.css" rel="stylesheet">
+
+</head>
+<body>
+  <section>
+    <h2>Add to Do</h2>
+    <form action="/todo-app" method="get"> <!-- defines where it goes-->
+        <input type="text" name="description"/>
+        <select name="status">
+            <option>completed</option>
+            <option>not completed</option>
+        </select>
+        <input type="radio" placeholder="are you agree?" name="agreement">
+        <input type="button">
+      <button>Add Item</button>
+    </form>
+      <section>
+          <ul th:if="!${todoList.isEmpty()}">
+              <li th:each="todoItem : ${todoList}">
+                    <label th:text="${todoItem.description}"> </label>
+                    <label th:if="${todoItem.getComplete()}">&checkmark;</label>
+<!--                  //the name of the methods in class-->
+                    <label th:if="${!todoItem.getComplete()}">&cross;</label>
+              </li>
+          </ul>
+      </section>
+
+
+  </section>
+
+</body>
+</html>

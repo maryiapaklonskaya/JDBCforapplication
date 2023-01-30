@@ -1,0 +1,13 @@
+body {
+    background: antiquewhite;
+}
+
+
+h1, h2, h3, a {
+    color: darkgoldenrod;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+}
